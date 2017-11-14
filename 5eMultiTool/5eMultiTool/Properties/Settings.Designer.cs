@@ -26,8 +26,8 @@ namespace _5eMultiTool.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\5eDatabase.md" +
-            "f;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\5eDatabase2.m" +
+            "df;Integrated Security=True")]
         public string _5eDatabaseConnectionString {
             get {
                 return ((string)(this["_5eDatabaseConnectionString"]));
