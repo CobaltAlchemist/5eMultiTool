@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="5eDatabase" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\5eDatabase.mdf;Integrated Security=True" SettingsObjectName="_5eMultiTool.Properties.Settings" SettingsPropertyName="_5eDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Action" Member="Actions">
+    <Type Name="Action">
+      <Column Name="ActionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Action_MonsterAction" Member="MonsterActions" ThisKey="ActionId" OtherKey="ActionId" Type="MonsterAction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Monster" Member="Monsters">
+    <Type Name="Monster">
+      <Column Name="MonsterId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Alignment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AC" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AvgHP" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HP" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Speed" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Strength" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Dexterity" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Constitution" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Intelligence" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Wisdom" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Charisma" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="[Passive Perception]" Member="Passive_Perception" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CR" Type="System.Decimal" DbType="Decimal(9,3)" CanBeNull="true" />
+      <Association Name="Monster_MonsterAction" Member="MonsterActions" ThisKey="MonsterId" OtherKey="MonsterId" Type="MonsterAction" />
+      <Association Name="Monster_MonsterSkill" Member="MonsterSkills" ThisKey="MonsterId" OtherKey="MonsterId" Type="MonsterSkill" />
+      <Association Name="Monster_MonsterTrait" Member="MonsterTraits" ThisKey="MonsterId" OtherKey="MonsterId" Type="MonsterTrait" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonsterActions" Member="MonsterActions">
+    <Type Name="MonsterAction">
+      <Column Name="MonsterId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ActionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttackBonus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DamageRoll" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Action_MonsterAction" Member="Action" ThisKey="ActionId" OtherKey="ActionId" Type="Action" IsForeignKey="true" />
+      <Association Name="Monster_MonsterAction" Member="Monster" ThisKey="MonsterId" OtherKey="MonsterId" Type="Monster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonsterSkills" Member="MonsterSkills">
+    <Type Name="MonsterSkill">
+      <Column Name="MonsterId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SkillId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Bonus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="Monster_MonsterSkill" Member="Monster" ThisKey="MonsterId" OtherKey="MonsterId" Type="Monster" IsForeignKey="true" />
+      <Association Name="Skill_MonsterSkill" Member="Skill" ThisKey="SkillId" OtherKey="SkillId" Type="Skill" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonsterTraits" Member="MonsterTraits">
+    <Type Name="MonsterTrait">
+      <Column Name="MonsterId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TraitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DamageRoll" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Monster_MonsterTrait" Member="Monster" ThisKey="MonsterId" OtherKey="MonsterId" Type="Monster" IsForeignKey="true" />
+      <Association Name="Trait_MonsterTrait" Member="Trait" ThisKey="TraitId" OtherKey="TraitId" Type="Trait" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Skill" Member="Skills">
+    <Type Name="Skill">
+      <Column Name="SkillId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Skill_MonsterSkill" Member="MonsterSkills" ThisKey="SkillId" OtherKey="SkillId" Type="MonsterSkill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trait" Member="Traits">
+    <Type Name="Trait">
+      <Column Name="TraitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Trait_MonsterTrait" Member="MonsterTraits" ThisKey="TraitId" OtherKey="TraitId" Type="MonsterTrait" />
+    </Type>
+  </Table>
+</Database>

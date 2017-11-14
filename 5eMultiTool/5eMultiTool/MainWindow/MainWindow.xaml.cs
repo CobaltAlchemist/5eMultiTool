@@ -23,6 +23,7 @@ namespace _5eMultiTool
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }
