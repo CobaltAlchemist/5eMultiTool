@@ -25,7 +25,7 @@ namespace _5eMultiTool
             _parseMonstersCommand = new DelegateCommand(
                 (x)=>
                 {
-                    ParseDatabase();
+                    ParseDatabase();//jk
                 });
         }
 
