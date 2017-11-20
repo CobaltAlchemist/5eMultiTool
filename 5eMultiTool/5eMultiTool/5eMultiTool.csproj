@@ -76,14 +76,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="5eDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>5eDatabase.dbml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="5eDatabaseClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>5eDatabaseClasses.dbml</DependentUpon>
     </Compile>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Enums.cs" />
@@ -117,17 +117,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="5eDatabaseClasses.dbml.layout">
-      <DependentUpon>5eDatabaseClasses.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="5eDatabaseClasses.dbml">
+    <None Include="5eDatabase.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>5eDatabaseClasses.designer.cs</LastGenOutput>
+      <LastGenOutput>5eDatabase.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="5eDatabase.dbml.layout">
+      <DependentUpon>5eDatabase.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,13 +141,6 @@
   <ItemGroup>
     <Content Include="5eDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="5eDatabase2.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="5eDatabase2_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>5eDatabase2.mdf</DependentUpon>
     </Content>
     <Content Include="5eDatabase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

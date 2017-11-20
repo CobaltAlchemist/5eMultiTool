@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="5eDatabase">
+  <DataContextMoniker Name="/_5eDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="eb7a5f81-1f55-4917-aa02-36d4967b926d" absoluteBounds="6, 6.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/Action" />
+      <nestedChildShapes>
+        <elementListCompartment Id="949bf9ac-b31c-46d7-8f94-50ca7e4adf1a" absoluteBounds="6.015, 6.5850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ecec89c-ae7b-480a-b31e-9b96bc018083" absoluteBounds="6, 3.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/Trait" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a80edd92-0dc3-4594-a842-c30123d4ef4b" absoluteBounds="6.015, 3.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57a79468-5bd5-40ea-8805-aabe729bd839" absoluteBounds="0.75, 3.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/Monster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc4204d0-ce26-4e98-a171-5ec7e676a52c" absoluteBounds="0.765, 3.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83baeb32-ae36-4299-a4b9-c4364fc791ac" absoluteBounds="3.5, 6.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/MonsterAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf992546-c3ca-48da-a685-29450d155c03" absoluteBounds="3.515, 6.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3572989-bcae-44a1-95a3-09f6da75f731" absoluteBounds="3.5, 4.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/MonsterSkill" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0547f887-6c1e-4447-9607-680c4e539838" absoluteBounds="3.515, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebc2c48c-5482-46b2-a752-ece2aef13315" absoluteBounds="3.5, 3.125, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/MonsterTrait" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94503781-35ac-4a41-a347-6b3813a4f9fa" absoluteBounds="3.515, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b12dfcb-7d2e-4cfa-8172-4e4e119d785e" absoluteBounds="6, 4.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/_5eDatabaseDataContext/Skill" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8eb35891-b810-4fde-a6ed-013bc0bffe89" absoluteBounds="6.015, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 6.81814697265625); (5.5 : 6.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Action/Action_MonsterAction" />
+      <nodes>
+        <classShapeMoniker Id="eb7a5f81-1f55-4917-aa02-36d4967b926d" />
+        <classShapeMoniker Id="83baeb32-ae36-4299-a4b9-c4364fc791ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.72675699869792); (3.5 : 6.72675699869792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Monster/Monster_MonsterAction" />
+      <nodes>
+        <classShapeMoniker Id="57a79468-5bd5-40ea-8805-aabe729bd839" />
+        <classShapeMoniker Id="83baeb32-ae36-4299-a4b9-c4364fc791ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.31814697265625); (3.5 : 5.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Monster/Monster_MonsterSkill" />
+      <nodes>
+        <classShapeMoniker Id="57a79468-5bd5-40ea-8805-aabe729bd839" />
+        <classShapeMoniker Id="a3572989-bcae-44a1-95a3-09f6da75f731" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.88064697265625); (3.5 : 3.88064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Monster/Monster_MonsterTrait" />
+      <nodes>
+        <classShapeMoniker Id="57a79468-5bd5-40ea-8805-aabe729bd839" />
+        <classShapeMoniker Id="ebc2c48c-5482-46b2-a752-ece2aef13315" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 3.88064697265625); (5.5 : 3.88064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Trait/Trait_MonsterTrait" />
+      <nodes>
+        <classShapeMoniker Id="9ecec89c-ae7b-480a-b31e-9b96bc018083" />
+        <classShapeMoniker Id="ebc2c48c-5482-46b2-a752-ece2aef13315" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 5.34699625651042); (5.5 : 5.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/_5eDatabaseDataContext/Skill/Skill_MonsterSkill" />
+      <nodes>
+        <classShapeMoniker Id="3b12dfcb-7d2e-4cfa-8172-4e4e119d785e" />
+        <classShapeMoniker Id="a3572989-bcae-44a1-95a3-09f6da75f731" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
