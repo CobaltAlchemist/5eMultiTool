@@ -88,6 +88,7 @@
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="JsonClasses.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="MonsterWindow.xaml.cs">
       <DependentUpon>MonsterWindow.xaml</DependentUpon>
     </Compile>
